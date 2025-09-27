@@ -1,4 +1,4 @@
-import type { Types } from "mongoose";
+ import type { Types } from "mongoose";
 
 export interface ICourse {
     courseId:string,
@@ -10,7 +10,7 @@ export interface ICourse {
     fee : string,
     rating:number;
     totalRating:number;
-    totalStudentInroll:number;
+    totalStudentEnroll:number;
     mentor:Types.ObjectId;
     courseStart:string;
     duration:number;
@@ -20,9 +20,9 @@ export interface ICourse {
     courseDetails:string;
     courseOverview:string;
     carriculam:string[];
-    courseIncludes:string[];
+    courseIncludes:{icon:string,text:string}[],
     softwareIncludes:string[];
-    jobOption:string;
+    jobOptions:string[];
 
 
 }
