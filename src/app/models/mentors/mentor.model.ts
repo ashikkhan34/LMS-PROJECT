@@ -25,4 +25,4 @@ const mentorSchema = new Schema<IMentor>({
     updatedAt:{type:Date,required:true}
 })
 
-const mentorModel = model<IMentor>('Mentors',mentorSchema)
+export const mentorModel = model<IMentor>('Mentors',mentorSchema)
