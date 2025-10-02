@@ -8,5 +8,5 @@ const studentReviewSchema = new Schema({
     date: { type: String, required: true },
     videoUrl: { type: String, required: true },
 });
-const studentReviewModel = model('StudentReviews', studentReviewSchema);
+export const studentReviewModel = model('StudentReviews', studentReviewSchema);
 //# sourceMappingURL=studentReview.model.js.map

@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 const adminSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId, required: true },
     id: { type: String, required: true },
     name: { type: String, required: true },
     gender: { type: String, required: true, enum: ['male', 'female', 'other'] },
@@ -14,5 +13,5 @@ const adminSchema = new Schema({
     updatedAt: { type: String, required: true },
     status: { type: String, required: true, enum: ['active', 'inactive', 'pending'] },
 });
-const adminModel = model('Admin', adminSchema);
+export const adminModel = model('Admin', adminSchema);
 //# sourceMappingURL=admin.model.js.map

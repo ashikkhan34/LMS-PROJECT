@@ -6,6 +6,24 @@ const CreateMentorService = async( payLoad:IMentor)=>{
     return mentor
 }
 
+const getAllMentorService = async()=>{
+    const mentor = await mentorModel.find()
+    return mentor;
+}
+const getAMentorService = async(id:any)=>{
+    const mentor = await mentorModel.findById(id)
+    return mentor;
+}
+
+
+const updateMentorService = async(id:string, payLoad:IMentor) =>{
+    const updateMentor = await mentorModel.findByIdAndUpdate(id, {$set:payLoad},{new:true, runValidators:true})
+    return updateMentor
+}
+
 export const mentorService = {
-    CreateMentorService
+    CreateMentorService,
+    getAllMentorService,
+    getAMentorService,
+    updateMentorService
 }

@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 const mentorSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId, required: true },
     id: { type: String, required: true },
     name: { type: String, required: true },
     gender: { type: String, required: true, enum: ['male', 'female', 'other'] },

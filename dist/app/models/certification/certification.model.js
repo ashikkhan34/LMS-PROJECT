@@ -9,5 +9,5 @@ const certificationSchema = new Schema({
     courseName: { type: String, required: true },
     batchName: { type: String, required: true },
 });
-const certificationModel = model('certification', certificationSchema);
+export const certificationModel = model('certification', certificationSchema);
 //# sourceMappingURL=certification.model.js.map

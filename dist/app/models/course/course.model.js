@@ -3,7 +3,7 @@ const courseSchema = new Schema({
     courseId: { type: String, required: true },
     title: { type: String, required: true },
     slug: { type: String, required: true },
-    category: { type: Schema.Types.ObjectId, required: true },
+    category: { type: Schema.Types.ObjectId, required: true, ref: 'category' },
     image: { type: String, required: true },
     type: { type: String, required: true },
     fee: { type: String, required: true },

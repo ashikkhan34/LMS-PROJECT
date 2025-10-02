@@ -3,7 +3,6 @@ import type { IAdmin } from "./admin.interface.js";
 
 
 const adminSchema = new Schema<IAdmin>({
-    _id:{type:Schema.Types.ObjectId,required:true},
     id:{type:String,required:true},
     name:{type:String,required:true},
     gender:{type:String,required:true,enum:['male','female','other']},
@@ -18,4 +17,4 @@ const adminSchema = new Schema<IAdmin>({
     status:{type:String,required:true,enum:['active','inactive','pending']},
 })
 
-const adminModel = model<IAdmin>('Admin',adminSchema)
+export const adminModel = model<IAdmin>('Admin',adminSchema)

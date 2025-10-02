@@ -7,5 +7,5 @@ const seminarSchema = new Schema({
     time: { type: String, required: true },
     image: { type: String, required: true },
 });
-const seminarModel = model('seminarEvents', seminarSchema);
+export const seminarModel = model('seminarEvents', seminarSchema);
 //# sourceMappingURL=seminar.model.js.map

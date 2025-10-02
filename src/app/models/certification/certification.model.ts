@@ -13,4 +13,4 @@ const certificationSchema = new Schema<ICertification>({
     batchName:{type:String,required:true},
 })
 
-const certificationModel = model<ICertification>('certification',certificationSchema)
+export const certificationModel = model<ICertification>('certification',certificationSchema)

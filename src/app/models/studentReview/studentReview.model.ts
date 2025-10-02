@@ -12,4 +12,4 @@ const studentReviewSchema = new Schema <IStudentReview>({
     videoUrl:{type:String,required:true},
 })
 
- const studentReviewModel = model<IStudentReview>('StudentReviews',studentReviewSchema)
+ export const studentReviewModel = model<IStudentReview>('StudentReviews',studentReviewSchema)

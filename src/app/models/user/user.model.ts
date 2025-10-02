@@ -2,7 +2,6 @@ import { model, Schema } from "mongoose";
 import type { IUser } from "./user.interface.js";
 
 const userSchema = new Schema<IUser>({
-  _id: { type: Schema.Types.ObjectId, required: true },
   id: { type: String, required: true },
   password: { type: String, required: true },
   isPasswordChange: { type: Boolean, required: true },
@@ -13,4 +12,4 @@ const userSchema = new Schema<IUser>({
   updatedAt:{type:Date,required:true}
 });
 
-const userModel = model<IUser>('Users',userSchema)
+export const userModel = model<IUser>('Users',userSchema)

@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 const userSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId, required: true },
     id: { type: String, required: true },
     password: { type: String, required: true },
     isPasswordChange: { type: Boolean, required: true },
@@ -10,5 +9,5 @@ const userSchema = new Schema({
     createdAt: { type: Date, required: true },
     updatedAt: { type: Date, required: true }
 });
-const userModel = model('Users', userSchema);
+export const userModel = model('Users', userSchema);
 //# sourceMappingURL=user.model.js.map

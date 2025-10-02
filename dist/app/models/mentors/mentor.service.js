@@ -3,7 +3,22 @@ const CreateMentorService = async (payLoad) => {
     const mentor = await mentorModel.create(payLoad);
     return mentor;
 };
+const getAllMentorService = async () => {
+    const mentor = await mentorModel.find();
+    return mentor;
+};
+const getAMentorService = async (id) => {
+    const mentor = await mentorModel.findById(id);
+    return mentor;
+};
+const updateMentorService = async (id, payLoad) => {
+    const updateMentor = await mentorModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
+    return updateMentor;
+};
 export const mentorService = {
-    CreateMentorService
+    CreateMentorService,
+    getAllMentorService,
+    getAMentorService,
+    updateMentorService
 };
 //# sourceMappingURL=mentor.service.js.map

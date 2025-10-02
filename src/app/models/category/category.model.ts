@@ -9,4 +9,4 @@ const categorySchema = new Schema<ICategory>({
     icon:{type:String,required:true},
 })
 
-const categoryModel = model<ICategory>('category',categorySchema)
+export const categoryModel = model<ICategory>('category',categorySchema)

@@ -5,5 +5,5 @@ const categorySchema = new Schema({
     slug: { type: String, required: true },
     icon: { type: String, required: true },
 });
-const categoryModel = model('category', categorySchema);
+export const categoryModel = model('category', categorySchema);
 //# sourceMappingURL=category.model.js.map

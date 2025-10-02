@@ -3,10 +3,9 @@ import type { IStudent } from "./student.interface.js";
 
 
 const studentSchema = new Schema<IStudent>({
-    _id:{type:Schema.Types.ObjectId,required:true},
     id:{type:String,required:true},
     name:{type:String,required:true},
-    gender:{type:String,required:true},
+    gender:{type:String,required:true,enum:['male','female','other']},
     dateOfBirth:{type:String,required:true},
     email:{type:String,required:true},
     contactNo:{type:String,required:true},
@@ -19,4 +18,4 @@ const studentSchema = new Schema<IStudent>({
     updatedAt:{type:Date,required:true},
 })
 
-const studentModel = model<IStudent>('Students',studentSchema)
+export const studentModel = model<IStudent>('Students',studentSchema)

@@ -1,1 +1,1 @@
-{"version":3,"file":"seminar.model.d.ts","sourceRoot":"","sources":["../../../../src/app/models/seminarEvent/seminar.model.ts"],"names":[],"mappings":""}
+{"version":3,"file":"seminar.model.d.ts","sourceRoot":"","sources":["../../../../src/app/models/seminarEvent/seminar.model.ts"],"names":[],"mappings":"AACA,OAAO,KAAI,EAAE,aAAa,EAAE,MAAM,6BAA6B,CAAC;AAe/D,eAAO,MAAM,YAAY;;;;OAAsD,CAAA"}

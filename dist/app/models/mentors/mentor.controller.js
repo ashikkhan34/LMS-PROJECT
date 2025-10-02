@@ -12,7 +12,57 @@ const createMentorController = async (req, res) => {
         console.log(err);
     }
 };
+const getAllMentorController = async (req, res) => {
+    try {
+        const allMentor = await mentorService.getAllMentorService();
+        res.status(201).json({
+            message: 'get all mentor data',
+            success: true,
+            mentor: allMentor
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
+const getAMentorController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const allMentor = await mentorService.getAMentorService(id);
+        res.status(201).json({
+            message: 'get a mentor data',
+            success: true,
+            mentor: allMentor
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
+const updateMentorController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if (!id) {
+            return res.send(404).json({
+                success: false,
+                message: 'id is required'
+            });
+        }
+        const allMentor = await mentorService.updateMentorService(id, req.body);
+        res.status(201).json({
+            message: 'get a mentor data',
+            success: true,
+            mentor: allMentor
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
 export const mentorController = {
-    createMentorController
+    createMentorController,
+    getAllMentorController,
+    getAMentorController,
+    updateMentorController
 };
 //# sourceMappingURL=mentor.controller.js.map

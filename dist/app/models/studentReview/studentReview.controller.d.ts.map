@@ -1,1 +1,1 @@
-{"version":3,"file":"studentReview.controller.d.ts","sourceRoot":"","sources":["../../../../src/app/models/studentReview/studentReview.controller.ts"],"names":[],"mappings":""}
+{"version":3,"file":"studentReview.controller.d.ts","sourceRoot":"","sources":["../../../../src/app/models/studentReview/studentReview.controller.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AA4CjD,eAAO,MAAM,uBAAuB;yCAzCa,OAAO,OAAK,QAAQ;yCAapB,OAAO,OAAK,QAAQ;uCAatB,OAAO,OAAK,QAAQ;CAmBlE,CAAA"}

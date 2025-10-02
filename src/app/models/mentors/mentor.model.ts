@@ -2,7 +2,6 @@ import { model, Schema } from "mongoose";
 import type { IMentor } from "./mentor.interface.js";
 
 const mentorSchema = new Schema<IMentor>({
-    _id:{type:Schema.Types.ObjectId,required:true},
     id:{type:String,required:true},
     name:{type:String,required:true},
     gender:{type:String,required:true,enum:['male','female','other']},

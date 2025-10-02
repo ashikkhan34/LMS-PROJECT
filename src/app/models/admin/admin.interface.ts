@@ -1,7 +1,6 @@
 import type { Types } from "mongoose";
 
 export interface IAdmin {
-    _id:Types.ObjectId,
     id:string,
     name:string,
     gender:'male'|'female'|'other',

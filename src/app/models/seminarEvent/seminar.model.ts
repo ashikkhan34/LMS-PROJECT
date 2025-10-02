@@ -14,4 +14,4 @@ const seminarSchema = new Schema<ISeminarEvent>({
 })
 
 
-const seminarModel = model<ISeminarEvent>('seminarEvents',seminarSchema)
+ export const seminarModel = model<ISeminarEvent>('seminarEvents',seminarSchema)
