@@ -16,8 +16,22 @@ const getAAdminService = async(id: any) =>{
     return admin
 }
 
+const updateAdminService = async(id:string, payLoad:Partial<IAdmin>) =>{
+    return await adminModel.findByIdAndUpdate(
+        id,
+        {$set:payLoad},
+        {new:true, runValidators:true}
+    )
+}
+
+const deleteAdminService = async(id:any) =>{
+    return await adminModel.findByIdAndDelete(id)
+}
+
 export const adminService = {
     createAdminService,
     getAllAdminService,
-    getAAdminService
+    getAAdminService,
+    updateAdminService,
+    deleteAdminService
 }

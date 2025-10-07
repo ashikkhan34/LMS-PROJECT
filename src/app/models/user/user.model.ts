@@ -7,9 +7,9 @@ const userSchema = new Schema<IUser>({
   isPasswordChange: { type: Boolean, required: true },
   role:{type:String,required:true,enum:['student','member','admin']},
   status:{type:String,enum:['active','blocked','pending']},
-  isDeleted:{type:Boolean,required:true},
-  createdAt:{type:Date,required:true},
-  updatedAt:{type:Date,required:true}
-});
+  isDeleted:{type:Boolean,required:true}
+},
+{timestamps:true}
+);
 
 export const userModel = model<IUser>('Users',userSchema)
