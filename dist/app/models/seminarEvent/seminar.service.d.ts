@@ -15,5 +15,15 @@ export declare const seminarEventService: {
     } & {
         __v: number;
     })[]>;
+    updateSeminarService: (id: any, payLoad: Partial<ISeminarEvent>) => Promise<(import("mongoose").Document<unknown, {}, ISeminarEvent, {}, {}> & ISeminarEvent & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
+    deleteSeminarService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, ISeminarEvent, {}, {}> & ISeminarEvent & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 };
 //# sourceMappingURL=seminar.service.d.ts.map

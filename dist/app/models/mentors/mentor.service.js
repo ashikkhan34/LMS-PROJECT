@@ -15,10 +15,14 @@ const updateMentorService = async (id, payLoad) => {
     const updateMentor = await mentorModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
     return updateMentor;
 };
+const deleteMentorService = async (id) => {
+    return await mentorModel.findByIdAndDelete(id);
+};
 export const mentorService = {
     CreateMentorService,
     getAllMentorService,
     getAMentorService,
-    updateMentorService
+    updateMentorService,
+    deleteMentorService
 };
 //# sourceMappingURL=mentor.service.js.map

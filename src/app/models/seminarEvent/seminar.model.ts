@@ -3,7 +3,7 @@ import type{ ISeminarEvent } from "./seminerEvent.interface.js";
 
 
 const seminarSchema = new Schema<ISeminarEvent>({
-    id:{type:Number,required:true},
+    id:{type:Number,required:true,unique:true},
     speaker:{type:String,required:true},
     title:{type:String,required:true},
     date:{type:String,required:true},

@@ -5,5 +5,7 @@ const router = express.Router();
 router.post('/create-studentReview', studentReviewController.createStudentReviewController);
 router.get('/', studentReviewController.getAllStudentReviewController);
 router.get('/:id', studentReviewController.getAStudentReviewController);
+router.put('/update-review/:id', studentReviewController.updateStudentReviewController);
+router.delete('/delete-review/:id', studentReviewController.deleteStudentReviewController);
 export const studentReviewRouter = router;
 //# sourceMappingURL=studentReview.route.js.map

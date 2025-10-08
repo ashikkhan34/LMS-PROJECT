@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 const mentorSchema = new Schema({
-    id: { type: String, required: true },
+    id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     gender: { type: String, required: true, enum: ['male', 'female', 'other'] },
     dateOfBirth: { type: String, required: true },
@@ -18,8 +18,6 @@ const mentorSchema = new Schema({
     reviews: { type: Number, required: true },
     bio: { type: String, required: true },
     lifeJourney: { type: String, required: true },
-    createdAt: { type: Date, required: true },
-    updatedAt: { type: Date, required: true }
-});
+}, { timestamps: true });
 export const mentorModel = model('Mentors', mentorSchema);
 //# sourceMappingURL=mentor.model.js.map

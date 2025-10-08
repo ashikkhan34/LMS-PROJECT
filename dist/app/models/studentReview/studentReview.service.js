@@ -11,9 +11,17 @@ const getAStudentReviewService = async (id) => {
     const allReview = await studentReviewModel.findById(id);
     return allReview;
 };
+const updateStudentReviewService = async (id, payLoad) => {
+    return await studentReviewModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
+};
+const deleteStudentReviewService = async (id) => {
+    return await studentReviewModel.findByIdAndDelete(id);
+};
 export const studentReviewService = {
     createStudentReviewService,
     getAllStudentReviewService,
-    getAStudentReviewService
+    getAStudentReviewService,
+    updateStudentReviewService,
+    deleteStudentReviewService
 };
 //# sourceMappingURL=studentReview.service.js.map

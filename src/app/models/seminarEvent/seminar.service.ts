@@ -16,8 +16,18 @@ const getASeminarEventService = async (id:any) =>{
     return seminar
 }
 
+const updateSeminarService = async(id:any, payLoad:Partial<ISeminarEvent>) =>{
+    return await seminarModel.findByIdAndUpdate(id,{$set:payLoad},{new:true, runValidators:true})
+}
+
+const deleteSeminarService = async(id:any) =>{
+    return await seminarModel.findByIdAndDelete(id)
+}
+
 export const seminarEventService = {
     createSeminarEventService,
     getSeminarEventService,
-    getASeminarEventService
+    getASeminarEventService,
+    updateSeminarService,
+    deleteSeminarService
 }

@@ -68,6 +68,7 @@ const updateCourseController = async (req: Request, res: Response) => {
       })
     }
   const updateCourse = await courseService.updateCourseService(id,req.body);
+  if(!updateCourse) return res.status(404).json({message:'data not found',success:false})
     res.status(202).json({
       message: "course is update successfully",
       success: "true",

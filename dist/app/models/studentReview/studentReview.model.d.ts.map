@@ -1,1 +1,1 @@
-{"version":3,"file":"studentReview.model.d.ts","sourceRoot":"","sources":["../../../../src/app/models/studentReview/studentReview.model.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,6BAA6B,CAAC;AAajE,eAAO,MAAM,kBAAkB;;;;OAA8D,CAAA"}
+{"version":3,"file":"studentReview.model.d.ts","sourceRoot":"","sources":["../../../../src/app/models/studentReview/studentReview.model.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,6BAA6B,CAAC;AAejE,eAAO,MAAM,kBAAkB;;;;OAA8D,CAAA"}

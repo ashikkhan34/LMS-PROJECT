@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 const seminarSchema = new Schema({
-    id: { type: Number, required: true },
+    id: { type: Number, required: true, unique: true },
     speaker: { type: String, required: true },
     title: { type: String, required: true },
     date: { type: String, required: true },

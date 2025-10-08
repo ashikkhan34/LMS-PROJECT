@@ -5,5 +5,6 @@ router.post('/create-mentor', mentorController.createMentorController);
 router.get('/', mentorController.getAllMentorController);
 router.get('/:id', mentorController.getAMentorController);
 router.put('/update-mentor/:id', mentorController.updateMentorController);
+router.delete('/delete-mentor/:id', mentorController.deleteMentorController);
 export const mentorRoute = router;
 //# sourceMappingURL=mentor.routes.js.map

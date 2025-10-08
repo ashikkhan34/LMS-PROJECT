@@ -21,9 +21,15 @@ const updateMentorService = async(id:string, payLoad:IMentor) =>{
     return updateMentor
 }
 
+const deleteMentorService = async(id:any)=>{
+    return await mentorModel.findByIdAndDelete(id)
+}
+
+
 export const mentorService = {
     CreateMentorService,
     getAllMentorService,
     getAMentorService,
-    updateMentorService
+    updateMentorService,
+    deleteMentorService
 }

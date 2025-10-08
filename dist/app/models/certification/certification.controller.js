@@ -39,9 +39,55 @@ const getACertificateController = async (req, res) => {
         console.log(err);
     }
 };
+const updateCertificateController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if (!id) {
+            return res.status(404).json({
+                message: 'id is required',
+                success: false
+            });
+        }
+        const Certificate = await certificateService.updateCertificateService(id, req.body);
+        if (!Certificate)
+            return res.status(404).json({ message: 'data not found', success: false });
+        res.status(201).json({
+            message: 'update a certificate data',
+            success: true,
+            data: Certificate
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
+const deleteCertificateController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if (!id) {
+            return res.status(404).json({
+                message: 'id is required',
+                success: false
+            });
+        }
+        const Certificate = await certificateService.deleteCertificateService(id);
+        if (!Certificate)
+            return res.status(404).json({ message: 'data not found', success: false });
+        res.status(201).json({
+            message: 'delete a certificate data',
+            success: true,
+            data: Certificate
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
 export const certificateController = {
     createCertificateController,
     getAllCertificateController,
-    getACertificateController
+    getACertificateController,
+    updateCertificateController,
+    deleteCertificateController
 };
 //# sourceMappingURL=certification.controller.js.map

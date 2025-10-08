@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 const courseSchema = new Schema({
-    courseId: { type: String, required: true },
+    courseId: { type: String, required: true, unique: true },
     title: { type: String, required: true },
     slug: { type: String, required: true },
     category: { type: Schema.Types.ObjectId, required: true, ref: 'category' },

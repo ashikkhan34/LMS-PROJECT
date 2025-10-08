@@ -3,7 +3,7 @@ import type { ICourse } from "./course.interface.js";
 
 
 const courseSchema = new Schema<ICourse>({
-    courseId:{type:String,required:true},
+    courseId:{type:String,required:true ,unique:true},
     title:{type:String,required:true},
     slug:{type:String,required:true},
     category:{type:Schema.Types.ObjectId,required:true,ref:'category'},

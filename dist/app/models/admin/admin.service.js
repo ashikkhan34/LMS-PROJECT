@@ -11,9 +11,17 @@ const getAAdminService = async (id) => {
     const admin = await adminModel.findById(id);
     return admin;
 };
+const updateAdminService = async (id, payLoad) => {
+    return await adminModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
+};
+const deleteAdminService = async (id) => {
+    return await adminModel.findByIdAndDelete(id);
+};
 export const adminService = {
     createAdminService,
     getAllAdminService,
-    getAAdminService
+    getAAdminService,
+    updateAdminService,
+    deleteAdminService
 };
 //# sourceMappingURL=admin.service.js.map

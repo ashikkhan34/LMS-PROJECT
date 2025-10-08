@@ -15,5 +15,15 @@ export declare const adminService: {
     } & {
         __v: number;
     }) | null>;
+    updateAdminService: (id: string, payLoad: Partial<IAdmin>) => Promise<(import("mongoose").Document<unknown, {}, IAdmin, {}, {}> & IAdmin & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
+    deleteAdminService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IAdmin, {}, {}> & IAdmin & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 };
 //# sourceMappingURL=admin.service.d.ts.map

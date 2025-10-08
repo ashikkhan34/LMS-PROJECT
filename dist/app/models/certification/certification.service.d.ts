@@ -15,5 +15,15 @@ export declare const certificateService: {
     } & {
         __v: number;
     }) | null>;
+    updateCertificateService: (id: any, payLoad: Partial<ICertification>) => Promise<(import("mongoose").Document<unknown, {}, ICertification, {}, {}> & ICertification & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
+    deleteCertificateService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, ICertification, {}, {}> & ICertification & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 };
 //# sourceMappingURL=certification.service.d.ts.map

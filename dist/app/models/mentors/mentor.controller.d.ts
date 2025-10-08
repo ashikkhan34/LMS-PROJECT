@@ -4,5 +4,6 @@ export declare const mentorController: {
     getAllMentorController: (req: Request, res: Response) => Promise<void>;
     getAMentorController: (req: Request, res: Response) => Promise<void>;
     updateMentorController: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+    deleteMentorController: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
 };
 //# sourceMappingURL=mentor.controller.d.ts.map

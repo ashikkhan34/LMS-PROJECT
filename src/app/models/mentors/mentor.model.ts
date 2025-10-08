@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 import type { IMentor } from "./mentor.interface.js";
 
 const mentorSchema = new Schema<IMentor>({
-    id:{type:String,required:true},
+    id:{type:String,required:true ,unique:true},
     name:{type:String,required:true},
     gender:{type:String,required:true,enum:['male','female','other']},
     dateOfBirth:{type:String,required:true},
@@ -20,8 +20,8 @@ const mentorSchema = new Schema<IMentor>({
     reviews:{type:Number,required:true},
     bio:{type:String,required:true},
     lifeJourney:{type:String,required:true},
-    createdAt:{type:Date,required:true},
-    updatedAt:{type:Date,required:true}
-})
+},
+{timestamps:true}
+)
 
 export const mentorModel = model<IMentor>('Mentors',mentorSchema)

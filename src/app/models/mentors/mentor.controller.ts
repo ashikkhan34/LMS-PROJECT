@@ -51,7 +51,26 @@ const updateMentorController = async (req:Request,res:Response)=>{
         }
         const allMentor = await mentorService.updateMentorService(id,req.body)
         res.status(201).json({
-            message:'get a mentor data',
+            message:'update a mentor data',
+            success:true,
+            mentor:allMentor
+        })
+    }catch(err){
+        console.log(err)
+    }
+    }
+const deleteMentorController = async (req:Request,res:Response)=>{
+    try{
+        const id = req.params.id;
+        if(!id){
+            return res.send(404).json({
+                success:false,
+                message:'id is required'
+            })
+        }
+        const allMentor = await mentorService.deleteMentorService(id)
+        res.status(201).json({
+            message:'delete a mentor data',
             success:true,
             mentor:allMentor
         })
@@ -65,5 +84,6 @@ const updateMentorController = async (req:Request,res:Response)=>{
     createMentorController,
     getAllMentorController,
     getAMentorController,
-    updateMentorController
+    updateMentorController,
+    deleteMentorController
 }

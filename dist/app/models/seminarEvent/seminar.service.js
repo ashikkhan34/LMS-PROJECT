@@ -11,9 +11,17 @@ const getASeminarEventService = async (id) => {
     const seminar = await seminarModel.find();
     return seminar;
 };
+const updateSeminarService = async (id, payLoad) => {
+    return await seminarModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
+};
+const deleteSeminarService = async (id) => {
+    return await seminarModel.findByIdAndDelete(id);
+};
 export const seminarEventService = {
     createSeminarEventService,
     getSeminarEventService,
-    getASeminarEventService
+    getASeminarEventService,
+    updateSeminarService,
+    deleteSeminarService
 };
 //# sourceMappingURL=seminar.service.js.map

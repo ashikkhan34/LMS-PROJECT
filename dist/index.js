@@ -11,6 +11,7 @@ import { userRoutes } from './app/models/user/user.routes.js';
 import { certificateRouter } from './app/models/certification/certification.route.js';
 import { categoryRoute } from './app/models/category/categroy.route.js';
 import { adminRoute } from './app/models/admin/admin.routes.js';
+import { authRouter } from './app/models/auth/auth.routes.js';
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/certificate', certificateRouter);
 app.use('/api/category', categoryRoute);
 app.use('/api/admin', adminRoute);
+app.use('/api/auth', authRouter);
 app.get('/', (req, res) => {
     res.send('Hello Ashik khan');
 });

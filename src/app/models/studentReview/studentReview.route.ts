@@ -8,6 +8,8 @@ import { studentReviewController } from './studentReview.controller.js';
  router.post('/create-studentReview',studentReviewController.createStudentReviewController)
  router.get('/',studentReviewController.getAllStudentReviewController)
  router.get('/:id',studentReviewController.getAStudentReviewController)
+ router.put('/update-review/:id',studentReviewController.updateStudentReviewController)
+ router.delete('/delete-review/:id',studentReviewController.deleteStudentReviewController)
 
 
  export const studentReviewRouter = router;

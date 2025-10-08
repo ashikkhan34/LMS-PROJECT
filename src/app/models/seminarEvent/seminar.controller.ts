@@ -42,9 +42,51 @@ const getASeminarEventController = async(req:Request,res:Response) =>{
     console.log(err);
   }
    }
+const updateASeminarEventController = async(req:Request,res:Response) =>{
+   try{
+    const id = req.params.id;
+    if(!id){
+            return res.status(404).json({
+                message:'id is required',
+                success:false
+            })
+        }
+     const EventData = await seminarEventService.updateSeminarService(id,req.body)
+     if(!EventData) return res.status(404).json({message:'data not found',success:false})
+     res.status(201).json({
+      message: "update a seminar event",
+      success: "true",
+      data: EventData,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+   }
+const deleteASeminarEventController = async(req:Request,res:Response) =>{
+   try{
+    const id = req.params.id;
+    if(!id){
+            return res.status(404).json({
+                message:'id is required',
+                success:false
+            })
+        }
+     const EventData = await seminarEventService.deleteSeminarService(id)
+     if(!EventData) return res.status(404).json({message:'data not found',success:false})
+     res.status(201).json({
+      message: "delete a seminar event",
+      success: "true",
+      data: EventData,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+   }
 
 export const seminarEventController = {
     createSeminarEventController,
     getAllSeminarEventController,
-    getASeminarEventController
+    getASeminarEventController,
+    updateASeminarEventController,
+    deleteASeminarEventController
 }

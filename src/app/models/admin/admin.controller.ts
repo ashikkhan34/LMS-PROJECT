@@ -45,7 +45,7 @@ const updateAdminController = async(req:Request,res:Response) =>{
         const id = req.params.id;
         if(!id){
             return res.status(404).json({
-                message:'id is requred'
+                message:'id is required'
             })
         }
         const Admin = await adminService.updateAdminService(id,req.body)
@@ -59,10 +59,30 @@ const updateAdminController = async(req:Request,res:Response) =>{
         console.log(err)
     }
 }
+const deleteAdminController = async(req:Request,res:Response) =>{
+    try{
+        const id = req.params.id;
+        if(!id){
+            return res.status(404).json({
+                message:'id is required'
+            })
+        }
+        const Admin = await adminService.deleteAdminService(id)
+        if(!Admin) return res.status(404).json({message:'data not found' , success:false})
+        res.status(201).json({
+            message:'delete a admin data',
+            success:true,
+            data:Admin
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
 
 export const adminController = {
     createAdminController,
     getAllAdminController,
     getAAdminController,
-    updateAdminController
+    updateAdminController,
+    deleteAdminController
 }

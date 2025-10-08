@@ -17,8 +17,19 @@ const getACertificateService = async(id:any)=>{
     return aCertificate
 }
 
+const updateCertificateService = async(id:any, payLoad:Partial<ICertification>) =>{
+    return await certificationModel.findByIdAndUpdate(id,payLoad)
+}
+
+const deleteCertificateService = async(id:any) =>{
+    return await certificationModel.findByIdAndDelete(id)
+}
+
 export const certificateService = {
     createCertificateService,
     getAllCertificateService,
-    getACertificateService
+    getACertificateService,
+    updateCertificateService,
+    deleteCertificateService
+
 }

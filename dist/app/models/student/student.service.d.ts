@@ -15,5 +15,15 @@ export declare const createStudent: {
     } & {
         __v: number;
     }) | null>;
+    updateStudentService: (id: any, payLoad: Partial<IStudent>) => Promise<(import("mongoose").Document<unknown, {}, IStudent, {}, {}> & IStudent & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
+    deleteStudentService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IStudent, {}, {}> & IStudent & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 };
 //# sourceMappingURL=student.service.d.ts.map

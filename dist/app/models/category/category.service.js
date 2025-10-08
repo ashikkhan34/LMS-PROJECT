@@ -11,9 +11,17 @@ const getACategoryService = async (id) => {
     const category = await categoryModel.findById(id);
     return category;
 };
+const updateCategoryService = async (id, payLoad) => {
+    return await categoryModel.findByIdAndUpdate(id, { $set: payLoad }, { new: true, runValidators: true });
+};
+const deleteCategoryService = async (id) => {
+    return await categoryModel.findByIdAndDelete(id);
+};
 export const categoryService = {
     createCategoryService,
     getAllCategoryService,
-    getACategoryService
+    getACategoryService,
+    updateCategoryService,
+    deleteCategoryService
 };
 //# sourceMappingURL=category.service.js.map

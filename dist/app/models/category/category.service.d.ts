@@ -15,5 +15,15 @@ export declare const categoryService: {
     } & {
         __v: number;
     }) | null>;
+    updateCategoryService: (id: any, payLoad: Partial<ICategory>) => Promise<(import("mongoose").Document<unknown, {}, ICategory, {}, {}> & ICategory & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
+    deleteCategoryService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, ICategory, {}, {}> & ICategory & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 };
 //# sourceMappingURL=category.service.d.ts.map

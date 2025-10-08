@@ -16,8 +16,22 @@ const getAStudentReviewService = async (id:any) =>{
     return allReview
 }
 
+const updateStudentReviewService = async(id:string, payLoad:Partial<IStudentReview>) =>{
+    return await studentReviewModel.findByIdAndUpdate(
+        id,
+        {$set:payLoad},
+        {new:true, runValidators:true}
+    )
+}
+
+const deleteStudentReviewService = async(id:string) =>{
+    return await studentReviewModel.findByIdAndDelete(id)
+}
+
 export const studentReviewService = {
     createStudentReviewService,
     getAllStudentReviewService,
-    getAStudentReviewService
+    getAStudentReviewService,
+    updateStudentReviewService,
+    deleteStudentReviewService
 }

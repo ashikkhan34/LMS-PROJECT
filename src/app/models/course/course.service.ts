@@ -12,7 +12,8 @@ const getAllCourseService = async () => {
   return allCourse;
 };
 const getACourseService = async (id: any) => {
-  const aCourse = await courseModel.findById(id);
+  const aCourse = await courseModel.findById(id)
+  .populate('mentor')
   return aCourse;
 };
 

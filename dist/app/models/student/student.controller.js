@@ -49,9 +49,46 @@ const getAStudentController = async (req, res) => {
     }
     catch (err) {
         console.log(err);
-        // error হলে response পাঠাও
         res.status(500).json({
-            message: "Failed to add student",
+            message: "Failed to get student",
+            success: false,
+            error: err instanceof Error ? err.message : err,
+        });
+    }
+};
+const updateAStudentController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const student = await createStudent.updateStudentService(id, req.body);
+        res.status(201).json({
+            message: "update a student",
+            success: true,
+            data: student,
+        });
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "Failed to update student",
+            success: false,
+            error: err instanceof Error ? err.message : err,
+        });
+    }
+};
+const deleteAStudentController = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const student = await createStudent.deleteStudentService(id);
+        res.status(201).json({
+            message: "delete a student",
+            success: true,
+            data: student,
+        });
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "Failed to delete student",
             success: false,
             error: err instanceof Error ? err.message : err,
         });
@@ -60,6 +97,8 @@ const getAStudentController = async (req, res) => {
 export const studentController = {
     createStudentController,
     getAllStudentController,
-    getAStudentController
+    getAStudentController,
+    updateAStudentController,
+    deleteAStudentController
 };
 //# sourceMappingURL=student.controller.js.map

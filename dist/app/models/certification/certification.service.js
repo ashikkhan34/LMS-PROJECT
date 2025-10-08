@@ -11,9 +11,17 @@ const getACertificateService = async (id) => {
     const aCertificate = await certificationModel.findById(id);
     return aCertificate;
 };
+const updateCertificateService = async (id, payLoad) => {
+    return await certificationModel.findByIdAndUpdate(id, payLoad);
+};
+const deleteCertificateService = async (id) => {
+    return await certificationModel.findByIdAndDelete(id);
+};
 export const certificateService = {
     createCertificateService,
     getAllCertificateService,
-    getACertificateService
+    getACertificateService,
+    updateCertificateService,
+    deleteCertificateService
 };
 //# sourceMappingURL=certification.service.js.map
