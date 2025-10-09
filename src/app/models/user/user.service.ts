@@ -1,22 +1,26 @@
 import mongoose from "mongoose";
 import type { IUser } from "./user.interface.js";
 import { userModel } from "./user.model.js";
+import bcrypt from 'bcrypt'
 
-const createUserService = async (payLoad: IUser) => {
+
+const createUserService = async (payLoad: IUser):Promise<IUser>=> {
+  const hashedPassword = await bcrypt.hash(payLoad.password,10)
+  payLoad.password= hashedPassword;
   const user = await userModel.create(payLoad);
   return user;
 };
 
-const getAllUserService = async () => {
+const getAllUserService = async ():Promise<IUser[]> => {
   const user = await userModel.find();
   return user;
 };
-const getAUserService = async (id: any) => {
+const getAUserService = async (id: any):Promise<IUser | null>  => {
   const user = await userModel.findById(id);
   return user;
 };
 
-const deleteAUserService = async (id: any) => {
+const deleteAUserService = async (id: any):Promise<IUser | null> => {
   return await userModel.findByIdAndDelete(id);
 };
 

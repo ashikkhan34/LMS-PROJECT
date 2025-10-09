@@ -1,28 +1,28 @@
 import type { IMentor } from "./mentor.interface.js";
 export declare const mentorService: {
-    CreateMentorService: (payLoad: IMentor) => Promise<import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & Required<{
+    CreateMentorService: (payLoad: IMentor) => Promise<import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & {
         _id: import("mongoose").Types.ObjectId;
-    }> & {
+    } & {
         __v: number;
     }>;
-    getAllMentorService: () => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & Required<{
+    getAllMentorService: () => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & {
         _id: import("mongoose").Types.ObjectId;
-    }> & {
+    } & {
         __v: number;
     })[]>;
-    getAMentorService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & Required<{
+    getAMentorService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & {
         _id: import("mongoose").Types.ObjectId;
-    }> & {
+    } & {
         __v: number;
     }) | null>;
-    updateMentorService: (id: string, payLoad: IMentor) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & Required<{
+    updateMentorService: (id: string, payLoad: IMentor) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & {
         _id: import("mongoose").Types.ObjectId;
-    }> & {
+    } & {
         __v: number;
     }) | null>;
-    deleteMentorService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & Required<{
+    deleteMentorService: (id: any) => Promise<(import("mongoose").Document<unknown, {}, IMentor, {}, {}> & IMentor & {
         _id: import("mongoose").Types.ObjectId;
-    }> & {
+    } & {
         __v: number;
     }) | null>;
 };

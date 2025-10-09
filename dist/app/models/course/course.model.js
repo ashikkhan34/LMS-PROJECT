@@ -10,7 +10,7 @@ const courseSchema = new Schema({
     rating: { type: Number, required: true },
     totalRating: { type: Number, required: true },
     totalStudentEnroll: { type: Number, required: true },
-    mentor: { type: Schema.Types.ObjectId, required: true },
+    mentor: { type: Schema.Types.ObjectId, required: true, ref: 'mentor' },
     courseStart: { type: String, required: true },
     duration: { type: Number, required: true },
     lectures: { type: Number, required: true },

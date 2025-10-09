@@ -24,4 +24,4 @@ const mentorSchema = new Schema<IMentor>({
 {timestamps:true}
 )
 
-export const mentorModel = model<IMentor>('Mentors',mentorSchema)
+export const mentorModel = model<IMentor>('mentor',mentorSchema)

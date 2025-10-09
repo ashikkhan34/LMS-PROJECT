@@ -9,7 +9,9 @@ const getAllCourseService = async () => {
     return allCourse;
 };
 const getACourseService = async (id) => {
-    const aCourse = await courseModel.findById(id);
+    const aCourse = await courseModel.findById(id)
+        .populate('category')
+        .populate('mentor', "name email _id");
     return aCourse;
 };
 const deleteCourseService = async (id) => {

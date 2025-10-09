@@ -17,7 +17,6 @@ export const auth = (req:Request,res:Response,next:NextFunction) =>{
 
 
 // 🔹 Role-based authorization (admin/user )
-
 export const authorization = (...roles:string[])=>{
     (req:any, res:Response, next:NextFunction) =>{
         if(!req.user || !roles.includes(req.user.role)){

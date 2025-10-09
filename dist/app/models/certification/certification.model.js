@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 const certificationSchema = new Schema({
-    id: { type: String, required: true },
+    id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     image: { type: String, required: true },
     PhoneNumber: { type: String, required: true },

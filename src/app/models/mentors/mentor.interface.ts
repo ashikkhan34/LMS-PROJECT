@@ -1,7 +1,6 @@
 import type { Types } from "mongoose";
 
 export interface IMentor {
-  _id: Types.ObjectId;
   id: string;
   name: string;
   gender: "male" | "female" | "others";
@@ -21,6 +20,4 @@ export interface IMentor {
   reviews: number;
   bio: string;
   lifeJourney: string;
-  createdAt: Date;
-  updatedAt: Date;
 }

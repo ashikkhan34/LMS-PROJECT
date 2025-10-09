@@ -19,5 +19,5 @@ const mentorSchema = new Schema({
     bio: { type: String, required: true },
     lifeJourney: { type: String, required: true },
 }, { timestamps: true });
-export const mentorModel = model('Mentors', mentorSchema);
+export const mentorModel = model('mentor', mentorSchema);
 //# sourceMappingURL=mentor.model.js.map
