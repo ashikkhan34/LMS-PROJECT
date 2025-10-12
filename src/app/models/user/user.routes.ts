@@ -6,7 +6,7 @@ import { validatedUserMiddleware } from '../middleware/validateUserMiddleware.js
 
 const router = express.Router()
 
-router.post('/create-user',validatedUserMiddleware,userController.createUserController)
+router.post('/create-user',userController.createUserController)
 router.get('/',userController.getAllUserController)
 router.get('/:id',userController.getAUserController)
 router.delete('/delete-user/:id',userController.deleteAUserController)
