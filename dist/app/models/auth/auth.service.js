@@ -17,7 +17,7 @@ export const authService = {
             name,
             email,
             password: hashedPassword,
-            role: role || "customer",
+            role: role || "student",
         });
         return newUser;
     },

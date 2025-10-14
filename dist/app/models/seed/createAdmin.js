@@ -11,7 +11,7 @@ const createAdmin = async () => {
             console.log('user already exit');
             process.exit(0);
         }
-        const hashedPassword = await bcrypt.hash('123456', 10);
+        const hashedPassword = await bcrypt.hash('Ashik@123', 10);
         const adminUser = await userModel.create({
             id: 'admin12',
             name: 'Ashik kahn',

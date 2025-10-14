@@ -1,3 +1,4 @@
+import { authService } from '../auth/auth.service.js';
 import { Router } from 'express';
 import express from 'express';
 import { userController } from './user.controller.js';

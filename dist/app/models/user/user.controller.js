@@ -1,6 +1,14 @@
 import { userService } from "./user.service.js";
 const createUserController = async (req, res) => {
     try {
+        const { role } = req.body;
+        // ❌ Prevent creating admin via register
+        if (role === "admin") {
+            return res.status(400).json({
+                success: false,
+                message: "Cannot create admin via register",
+            });
+        }
         const user = await userService.createUserService(req.body);
         res.status(201).json({
             success: true,

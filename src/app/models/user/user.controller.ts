@@ -4,6 +4,15 @@ import { userService } from "./user.service.js";
 
 const createUserController = async (req: Request, res: Response) => {
   try {
+      const { role } = req.body;
+
+    // ❌ Prevent creating admin via register
+    if (role === "admin") {
+      return res.status(400).json({
+        success: false,
+        message: "Cannot create admin via register",
+      });
+    }
     const user = await userService.createUserService(req.body);
     res.status(201).json({
       success: true,
@@ -87,7 +96,7 @@ const updateAUserController = async (req: Request, res: Response) => {
         message:'id is required'
       })
     }
-    const updateUser = await userService.updateUserService(id, req.body);
+    const updateUser = await userService.updateUserService(id,req.body);
     res.status(202).json({
       success: true,
       message: 'update a user successful',

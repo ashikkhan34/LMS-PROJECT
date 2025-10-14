@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 export declare const userController: {
-    createUserController: (req: Request, res: Response) => Promise<void>;
+    createUserController: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
     getAllUserController: (req: Request, res: Response) => Promise<void>;
     getAUserController: (req: Request, res: Response) => Promise<void>;
     deleteAUserController: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
