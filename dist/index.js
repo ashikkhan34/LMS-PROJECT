@@ -13,7 +13,11 @@ import { categoryRoute } from './app/models/category/categroy.route.js';
 import { adminRoute } from './app/models/admin/admin.routes.js';
 import { authRouter } from './app/models/auth/auth.routes.js';
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ["https://lms-project-f.vercel.app"], // frontend er live link
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 app.use('/api/course', CourseRoutes);
 app.use('/api/mentor', mentorRoute);
