@@ -3,7 +3,7 @@ dotenv.config();
 import mongoose from "mongoose";
 import app from "./index.js";
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 async function main() {
   try {

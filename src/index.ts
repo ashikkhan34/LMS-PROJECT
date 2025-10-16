@@ -14,9 +14,21 @@ import { authRouter } from "./app/models/auth/auth.routes.js";
 
 const app = express();
 
+
+// ✅ Add this CORS middleware (VERY IMPORTANT)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://lms-project-f.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 // ✅ CORS must be at the very top
 app.use(cors({
-  origin: ["https://lms-project-f.vercel.app"], //frontend live link
+  origin: ["https://lms-project-f.vercel.app","http://localhost:4000"], //frontend live link
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));

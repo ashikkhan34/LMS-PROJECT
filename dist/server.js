@@ -1,14 +1,20 @@
 import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
-main().catch(err => console.log(err));
 import app from "./index.js";
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 async function main() {
-    await mongoose.connect(process.env.MONGODB_URL);
-    // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
-    app.listen(PORT, () => {
-        console.log(`Example app listening on port ${PORT}`);
-    });
+    try {
+        await mongoose.connect(process.env.MONGODB_URL);
+        console.log("✅ MongoDB connected successfully!");
+        // Only run listen() locally — not on Vercel
+        app.listen(PORT, () => {
+            console.log(`🚀 Server running on port ${PORT}`);
+        });
+    }
+    catch (err) {
+        console.error("❌ Database connection failed:", err);
+    }
 }
+main();
 //# sourceMappingURL=server.js.map
