@@ -14,7 +14,7 @@ import { adminRoute } from './app/models/admin/admin.routes.js';
 import { authRouter } from './app/models/auth/auth.routes.js';
 const app = express();
 app.use(cors({
-    origin: ["https://lms-project-f.vercel.app"], // frontend er live link
+    origin: ["https://lms-project-f.vercel.app/"], // frontend er live link
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
